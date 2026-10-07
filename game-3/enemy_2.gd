@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 var direction = 1 
-var health = 3
+var health = 1
 var bullet = preload("res://bullet.tscn")
 
 const EXPLOSION = preload("res://explosion.tscn")
@@ -13,7 +13,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	var half_width = animated_sprite_2d.sprite_frames.get_frame_texture(animated_sprite_2d.animation, animated_sprite_2d.frame).get_size().x / 2
-
+	var is_spawned_enemy = is_in_group("spawned_enemies")
+	
 	if position.x < -half_width:
 		queue_free()
 		
@@ -36,3 +37,7 @@ func take_damage(amount: int) -> void:
 		get_tree().current_scene.add_child(boom)
 		boom.global_position = global_position
 		queue_free()
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("player"):
+		take_damage(2)

@@ -25,6 +25,9 @@ height = 22.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0ya7"]
 size = Vector2(33, 12)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ha5v8"]
+size = Vector2(30, 11)
+
 [node name="enemy3" type="CharacterBody2D" unique_id=141192781 groups=["enemies"]]
 collision_layer = 2
 collision_mask = 0
@@ -47,4 +50,12 @@ shape = SubResource("RectangleShape2D_u0ya7")
 [node name="bullet_pos" type="Marker2D" parent="." unique_id=1896061417]
 position = Vector2(0, 10)
 
+[node name="Area2D" type="Area2D" parent="." unique_id=1428795021]
+position = Vector2(0, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=298938800]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_ha5v8")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -22,6 +22,8 @@ animations = [{
 radius = 12.0
 height = 24.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_tv6ys"]
+
 [node name="enemy2" type="CharacterBody2D" unique_id=141192781 groups=["enemies"]]
 collision_layer = 2
 collision_mask = 0
@@ -39,4 +41,11 @@ sprite_frames = SubResource("SpriteFrames_u0ya7")
 position = Vector2(1, -7)
 shape = SubResource("CapsuleShape2D_u0ya7")
 
+[node name="Area2D" type="Area2D" parent="." unique_id=1819833895]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=891308184]
+position = Vector2(1, -7)
+shape = SubResource("CircleShape2D_tv6ys")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
