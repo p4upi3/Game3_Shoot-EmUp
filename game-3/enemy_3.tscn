@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dhqvihb5u82yn"]
+
+[ext_resource type="Script" uid="uid://cjm0c5nrfbqsd" path="res://enemy_3.gd" id="1_dxyk6"]
+[ext_resource type="Texture2D" uid="uid://cdu4t45o0q7tf" path="res://assets/SpaceShips_Enemy-0001.png" id="2_no5mw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v15ab"]
+atlas = ExtResource("2_no5mw")
+region = Rect2(138, 183, 55, 61)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vfv5t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v15ab")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u0ya7"]
+radius = 7.0
+height = 22.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0ya7"]
+size = Vector2(33, 12)
+
+[node name="enemy3" type="CharacterBody2D" unique_id=141192781]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_dxyk6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=555139004]
+position = Vector2(0, 2)
+sprite_frames = SubResource("SpriteFrames_vfv5t")
+
+[node name="Timer" type="Timer" parent="." unique_id=876703633]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=648423279]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_u0ya7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1472914738]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_u0ya7")
+
+[node name="bullet_pos" type="Marker2D" parent="." unique_id=1896061417]
+position = Vector2(0, 10)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

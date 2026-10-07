@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://oevs4fqgmvop"]
+
+[ext_resource type="Script" uid="uid://8bvbb0828i3y" path="res://canvas_layer.gd" id="1_v2lfg"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1582278850 groups=["hud"]]
+process_mode = 3
+script = ExtResource("1_v2lfg")
+
+[node name="BottomBar" type="ColorRect" parent="." unique_id=946222148]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -25.0
+offset_right = 160.0
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="HealthLabel" type="Label" parent="." unique_id=1638659078]
+offset_left = 10.0
+offset_top = 220.0
+offset_right = 59.0
+offset_bottom = 243.0
+theme_override_font_sizes/font_size = 10
+text = "Health: 20"
+
+[node name="Scorelabel" type="Label" parent="." unique_id=605738473]
+offset_left = 113.0
+offset_top = 220.0
+offset_right = 153.0
+offset_bottom = 243.0
+theme_override_font_sizes/font_size = 10
+text = "Score: 0"
+
+[node name="GameOverLabel" type="Label" parent="." unique_id=1600771115]
+visible = false
+offset_left = 16.0
+offset_top = 77.0
+offset_right = 200.0
+offset_bottom = 126.0
+theme_override_font_sizes/font_size = 11
+text = "            GAME OVER 
+- Press Enter to restart.-"

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bad3gli731xmv"]
+
+[ext_resource type="PackedScene" uid="uid://cqrtoqmq241i0" path="res://player.tscn" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://dlyoqnh7dwpbm" path="res://space_background.tscn" id="2_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://ccphdyom81nlm" path="res://enemy1.tscn" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://bh20u5ntwgn1a" path="res://enemy_2.tscn" id="4_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://dhqvihb5u82yn" path="res://enemy_3.tscn" id="5_7jktm"]
+[ext_resource type="PackedScene" uid="uid://oevs4fqgmvop" path="res://canvas_layer.tscn" id="6_ryrav"]
+
+[node name="Node2D" type="Node2D" unique_id=1774678014]
+
+[node name="enemy1" parent="." unique_id=141192781 instance=ExtResource("3_feb5d")]
+position = Vector2(14.141968, 24.095356)
+
+[node name="Player" parent="." unique_id=396328734 instance=ExtResource("1_80nbo")]
+position = Vector2(83, 195)
+
+[node name="ParallaxBackground" parent="." unique_id=139663598 instance=ExtResource("2_e2o6t")]
+
+[node name="enemy2" parent="." unique_id=216759408 instance=ExtResource("4_fc0e3")]
+position = Vector2(14, 104)
+
+[node name="enemy3" parent="." unique_id=333026296 instance=ExtResource("5_7jktm")]
+position = Vector2(20, -11)
+
+[node name="CanvasLayer" parent="." unique_id=1582278850 instance=ExtResource("6_ryrav")]
