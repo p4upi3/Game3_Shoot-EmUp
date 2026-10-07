@@ -46,10 +46,12 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Explosion" type="AnimatedSprite2D" unique_id=463464512]
-position = Vector2(-5.9604645e-08, -5.9604645e-08)
-scale = Vector2(0.117187515, 0.117187515)
+[node name="Explosion" type="AnimatedSprite2D" unique_id=463464512 groups=["explosion"]]
+position = Vector2(-2.3841858e-07, 0)
+scale = Vector2(2.3750002, 2.546875)
 sprite_frames = SubResource("SpriteFrames_u0ya7")
 frame = 4
 frame_progress = 1.0
 script = ExtResource("2_vxas0")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

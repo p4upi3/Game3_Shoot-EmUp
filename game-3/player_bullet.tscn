@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q2weg"]
 size = Vector2(3, 8)
 
-[node name="PlayerBullet" type="Area2D" unique_id=1051121463]
+[node name="PlayerBullet" type="Area2D" unique_id=1051121463 groups=["bullet"]]
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_oxuh6")
@@ -19,4 +19,6 @@ shape = SubResource("RectangleShape2D_q2weg")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1711177141]
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

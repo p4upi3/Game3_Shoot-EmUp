@@ -10,7 +10,7 @@
 
 [node name="Node2D" type="Node2D" unique_id=1774678014]
 
-[node name="enemy1" parent="." unique_id=141192781 instance=ExtResource("3_feb5d")]
+[node name="enemy1" parent="." unique_id=141192781 groups=["enemies"] instance=ExtResource("3_feb5d")]
 position = Vector2(14.141968, 24.095356)
 
 [node name="Player" parent="." unique_id=396328734 instance=ExtResource("1_80nbo")]
@@ -18,10 +18,10 @@ position = Vector2(83, 195)
 
 [node name="ParallaxBackground" parent="." unique_id=139663598 instance=ExtResource("2_e2o6t")]
 
-[node name="enemy2" parent="." unique_id=216759408 instance=ExtResource("4_fc0e3")]
+[node name="enemy2" parent="." unique_id=216759408 groups=["enemies"] instance=ExtResource("4_fc0e3")]
 position = Vector2(14, 104)
 
-[node name="enemy3" parent="." unique_id=333026296 instance=ExtResource("5_7jktm")]
+[node name="enemy3" parent="." unique_id=333026296 groups=["enemies"] instance=ExtResource("5_7jktm")]
 position = Vector2(20, -11)
 
 [node name="CanvasLayer" parent="." unique_id=1582278850 instance=ExtResource("6_ryrav")]

@@ -7,6 +7,8 @@ const BOTTOM_BAR = 25.0
 var health = 20
 var screen_size: Vector2
 
+const EXPLOSION = preload("res://explosion.tscn")
+
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
 
@@ -30,5 +32,8 @@ func take_damage(amount: int) -> void:
 	health -= amount
 	get_tree().call_group("hud", "set_health", health)
 	if health <= 0:
+		var boom = EXPLOSION.instantiate()
+		get_tree().current_scene.add_child(boom)
+		boom.global_position = global_position
 		get_tree().call_group("hud", "show_game_over")
 		queue_free()

@@ -4,7 +4,10 @@ extends CharacterBody2D
 
 var width = 0
 var direction = -1
+var health = 5
 var bullet = preload("res://bullet.tscn")
+
+const EXPLOSION = preload("res://explosion.tscn")
 
 # Used only for enemies created by EnemySpawner.
 var edge_hits: int = 0
@@ -79,7 +82,6 @@ func _physics_process(_delta: float) -> void:
 	velocity.x = direction * 85
 	move_and_slide()
 
-
 func move_down() -> void:
 	var tween = get_tree().create_tween()
 
@@ -90,13 +92,25 @@ func move_down() -> void:
 		5.0
 	)
 
-
 func shoot() -> void:
 	var inst = bullet.instantiate()
 	get_parent().add_child(inst)
 	inst.global_position = $bullet_pos.global_position
 
-
 func _on_timer_timeout() -> void:
 	shoot()
 	$Timer.start(0.5)
+
+func explode() -> void:
+	var boom = EXPLOSION.instantiate()
+	get_tree().current_scene.add_child(boom)
+	boom.global_position = global_position
+	queue_free()
+
+func take_damage(amount: int) -> void:
+	health -= amount
+	if health <= 0:
+		var boom = EXPLOSION.instantiate()
+		get_tree().current_scene.add_child(boom)
+		boom.global_position = global_position
+		queue_free()

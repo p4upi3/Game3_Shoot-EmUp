@@ -20,7 +20,5 @@ func _process(delta: float) -> void:
 
 func shoot() -> void:
 	var projectile = PLAYER_BULLET.instantiate()
-
 	get_tree().current_scene.add_child(projectile)
-
 	projectile.global_position = shot_spawn.global_position

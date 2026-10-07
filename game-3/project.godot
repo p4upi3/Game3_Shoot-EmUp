@@ -27,6 +27,9 @@ window/stretch/mode="canvas_items"
 
 player=""
 hud=""
+enemies=""
+bullet=""
+explosion=""
 
 [input]
 
