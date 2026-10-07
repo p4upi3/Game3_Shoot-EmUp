@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://frmbsls75wta"]
+
+[ext_resource type="Texture2D" uid="uid://drv021t0uev4v" path="res://assets/laser_small.png" id="1_mbmgk"]
+[ext_resource type="Script" uid="uid://mrhjr3lrafy8" path="res://player_bullet.gd" id="1_oxuh6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q2weg"]
+size = Vector2(3, 8)
+
+[node name="PlayerBullet" type="Area2D" unique_id=1051121463]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_oxuh6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1805709510]
+texture = ExtResource("1_mbmgk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=110549013]
+shape = SubResource("RectangleShape2D_q2weg")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1711177141]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

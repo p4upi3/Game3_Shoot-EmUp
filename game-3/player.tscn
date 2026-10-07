@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bwitmvi2v4i4d" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://ductw1013g16r" path="res://Mini Pixel Pack 3/Player ship/Player_ship (16 x 16).png" id="2_i3pqv"]
+[ext_resource type="Script" uid="uid://dbgiv4bkmw5kp" path="res://player_shooter.gd" id="3_i3pqv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hqtel"]
 atlas = ExtResource("2_i3pqv")
@@ -75,3 +76,9 @@ shape = SubResource("CapsuleShape2D_u0ya7")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=5887912]
 position = Vector2(1.25, -6)
 shape = SubResource("RectangleShape2D_u0ya7")
+
+[node name="ShotSpawn" type="Marker2D" parent="." unique_id=1696110203]
+position = Vector2(0, -12)
+
+[node name="PlayerShooter" type="Node" parent="." unique_id=365376375]
+script = ExtResource("3_i3pqv")

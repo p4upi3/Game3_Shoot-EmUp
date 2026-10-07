@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bh20u5ntwgn1a" path="res://enemy_2.tscn" id="4_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://dhqvihb5u82yn" path="res://enemy_3.tscn" id="5_7jktm"]
 [ext_resource type="PackedScene" uid="uid://oevs4fqgmvop" path="res://canvas_layer.tscn" id="6_ryrav"]
+[ext_resource type="Script" uid="uid://dk2pnfjr4lwmh" path="res://enemy_spawner.gd" id="7_eow3j"]
 
 [node name="Node2D" type="Node2D" unique_id=1774678014]
 
@@ -24,3 +25,8 @@ position = Vector2(14, 104)
 position = Vector2(20, -11)
 
 [node name="CanvasLayer" parent="." unique_id=1582278850 instance=ExtResource("6_ryrav")]
+
+[node name="EnemySpawner" type="Node2D" parent="." unique_id=2121180773]
+script = ExtResource("7_eow3j")
+
+[node name="SpawnTimer" type="Timer" parent="EnemySpawner" unique_id=1903936492]
