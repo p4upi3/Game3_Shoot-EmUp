@@ -9,14 +9,15 @@ var bullet = preload("res://bullet.tscn")
 const EXPLOSION = preload("res://explosion.tscn")
 
 func _physics_process(delta: float) -> void:
+	var is_spawned_enemy = is_in_group("spawned_enemies")
 	velocity.x = direction * 50
 	move_and_slide()
 
 	var half_width = animated_sprite_2d.sprite_frames.get_frame_texture(animated_sprite_2d.animation, animated_sprite_2d.frame).get_size().x / 2
-	var is_spawned_enemy = is_in_group("spawned_enemies")
 	
-	if position.x < -half_width:
+	if position.x > 210:
 		queue_free()
+	return
 		
 func _ready() -> void:
 	$Timer.start(0.5)

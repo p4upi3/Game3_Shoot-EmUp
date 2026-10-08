@@ -101,12 +101,6 @@ func _on_timer_timeout() -> void:
 	shoot()
 	$Timer.start(0.5)
 
-func explode() -> void:
-	var boom = EXPLOSION.instantiate()
-	get_tree().current_scene.add_child(boom)
-	boom.global_position = global_position
-	queue_free()
-
 func take_damage(amount: int) -> void:
 	health -= amount
 	if health <= 0:
