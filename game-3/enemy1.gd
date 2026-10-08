@@ -35,7 +35,7 @@ func _physics_process(_delta: float) -> void:
 	var is_spawned_enemy = is_in_group("spawned_enemies")
 
 	if exiting:
-		velocity.x = direction * 85
+		velocity.x = direction * 65
 		move_and_slide()
 
 		if (

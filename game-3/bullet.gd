@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var speed: float = 500.0
+@export var speed: float = 150.0
 @export var direction: Vector2 = Vector2.DOWN
 
 @onready var ray: RayCast2D = $RayCast2D

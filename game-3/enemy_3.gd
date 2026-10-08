@@ -4,9 +4,16 @@ var bullet = preload("res://bullet.tscn")
 
 const EXPLOSION = preload("res://explosion.tscn")
 var health = 3
+var direction = 1 
+
 func _physics_process(delta: float) -> void:
-	velocity = Vector2(0, 50)
+	var is_spawned_enemy = is_in_group("spawned_enemies")
+	velocity.y = direction * 40
 	move_and_slide()
+	
+	if position.y > 500:
+		queue_free()
+	return
 	
 func _ready() -> void:
 	$Timer.start(0.5)
