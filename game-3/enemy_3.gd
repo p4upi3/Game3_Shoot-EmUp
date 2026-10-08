@@ -11,7 +11,7 @@ func _physics_process(delta: float) -> void:
 	velocity.y = direction * 40
 	move_and_slide()
 	
-	if position.y > 500:
+	if position.y > get_viewport_rect().size.y+40:
 		queue_free()
 	return
 	
@@ -37,4 +37,4 @@ func take_damage(amount: int) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player"):
-		take_damage(2)
+		take_damage(3)

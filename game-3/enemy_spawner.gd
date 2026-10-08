@@ -4,7 +4,7 @@ const ENEMY_SCENE1 = preload("res://enemy1.tscn")
 const ENEMY_SCENE2 = preload("res://enemy_2.tscn")
 const ENEMY_SCENE3 = preload("res://enemy_3.tscn")
 
-@export var spawn_interval: float = 3.0
+@export var spawn_interval: float = 2.5
 @export var offscreen_padding: float = 40.0
 @export var max_spawned_enemies: int = 4
 
